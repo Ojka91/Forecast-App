@@ -1,4 +1,5 @@
 
+document.getElementById("weather").style.display = "none";
 document.getElementById("loader").style.display = 'none';
 document.getElementById("search").addEventListener("click", () => search());
 var searcher = document.getElementById("search");
@@ -12,9 +13,10 @@ searcher.addEventListener("keyup", function(event) {
 
 function search(){
     document.getElementById("loader").style.display = "block";
+     document.getElementById("weather").style.display = "block";
     var value = document.getElementById("input").value;
     var text = document.getElementById("main");
-  document.getElementById("main").innerHTML = "";
+  document.getElementById("home").innerHTML = ""; document.getElementById("main").innerHTML = "";
    
     
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+value+'&APPID=d84c244555530ce003a42fdf67cbd9be')
@@ -25,8 +27,9 @@ function search(){
         console.log(data);
         var temp = data.main.temp;
         temp = temp-273.15;
-    text.append(temp.toFixed(2)+ "ºC " +" in "+ data.name + " "+ data.sys.country+ ", "+ data.weather[0].description);
+    document.getElementById("main").append(temp.toFixed(2)+ "ºC " +" in "+ data.name + " "+ data.sys.country+ ", "+ data.weather[0].description);
         document.getElementById("loader").style.display = 'none';
+       
         
     })
     .catch((err) => {

@@ -12,7 +12,7 @@
 
 <body>
     <div class="row">
-        <header class="header" >
+        <header class="header fixed-top" >
             <div class=" col-md-4 h1"><h1>   <a href=".">Forecast</a></h1></div>
             <div class="col-8 col-md-4 input search" > <input type="text" class="searchTerm" id="input" placeholder="City name...">
  
@@ -25,18 +25,28 @@
 
     <div class="row">
         <div class="col-12">
-           <div class="text" id="main">
+           <div class="text" id="home">
            <div class="textorder">
             <p>Write at the search bar the name of the city you want to check the weather...</p>
             <p>If you want to add a country, write the name of the city","digits of the country just like this:
             </p>
-            <p>Cordoba,ES</p>
+            <p>Cordoba,ES</p>    
             <span>It will show the city Cordoba from Spain instead of Argentina</span>
             </div></div>
         </div>
     </div>    
     
-<div class="loader">
+    <div class="row" id="weather">
+        <div class="col-12 ">
+            <div class="flex">
+               <div id="main" class="main flex">
+                
+            </div>
+            </div>
+        </div>
+    </div>
+    
+<div class="loader" id="loader">
     <div class="row loader">
         <div class="col-12 loader" id="loader">
     
@@ -57,6 +67,9 @@
 
 
 </div>
+
+
+<footer class="fixed-bottom">API from OpenWeatherMaps</footer>
 
 
 
